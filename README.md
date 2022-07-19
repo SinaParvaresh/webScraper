@@ -24,3 +24,5 @@ If not installed and on Windows, download from the Microsoft Store.
 You MUST create your own separate praw.ini file, where you will assign and store your reddit credentials such as the client ID, Client secret and your Reddit username/password.
 
 Set the paramters of your SubReddit scraper such as the number of posts to go through, or the particular subreddit (possibly another stock subreddit such as r/Investing or r/StockMarket).
+
+A CSV which contains the information of each topic in the sub Reddit such as the title, date/time posted, and score is automatically created when running the program.
