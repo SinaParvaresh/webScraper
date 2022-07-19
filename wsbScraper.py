@@ -73,11 +73,13 @@ class SubredditSraper:
             for stock in stockNames.keys():
                 if re.search(r'\s+\$?' + stock + r'\$?\s+', title):
                     stockNames_dict[stock] += 1
-                    print('Stock name:', stock, "\nTitle is:", title, "\n---------------")
         
         #sorting the list of the most popular stocks, and choosing the top 5
         topStocks = dict(sorted(stockNames_dict.items(), key=operator.itemgetter(1), reverse=True)[:5])
-        print(topStocks)
+        print("The top 5 stocks are:")
+
+        for key, value in topStocks.items():
+            print(key, ':', value)
     
 
 
