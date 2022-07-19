@@ -6,10 +6,15 @@ This program will scrape any subreddit set by the user, and return the top 5 mos
 
 ## Installation
 
-Check if Python is installed
+Check if Python is installed (version 3 is required)
 
 ```bash
 python --version
+```
+or
+
+```bash
+python3 --version
 ```
 
 If not installed and on Windows, download from the Microsoft Store.
