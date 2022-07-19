@@ -1,7 +1,7 @@
-# SubReddit-StockScraper
+# Subreddit-StockScraper
  
 
-## A subReddit stock title scraper
+## A Subreddit stock title scraper
 
 This program will scrape any subreddit set by the user, and return the top 5 most frequently mentioned stocks.
 
@@ -25,7 +25,7 @@ If not installed and on Windows, download from the Microsoft Store.
 You **MUST** create your own separate praw.ini file, where you will assign and store your reddit credentials such as the client ID, Client secret and your Reddit username/password.
 These credentials can be obtained by applying for a [Reddit API Key](https://www.reddit.com/wiki/api/#wiki_reddit_api_access).
 
-##### Set the paramters of your SubReddit scraper such as: 
+##### Set the paramters of your subreddit scraper such as: 
 
 Number of posts to go through (Default set to 100) 
 
@@ -33,4 +33,4 @@ Particular subreddit (possibly another stock subreddit such as r/Investing or r/
 
 
 
-A CSV which contains the information of each topic in the sub Reddit such as the title, date/time posted, and score is automatically created for you when running the program.
+A CSV which contains the information of each topic in the subreddit such as the title, date/time posted, and score is automatically created for you when running the program.
