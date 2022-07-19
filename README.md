@@ -14,7 +14,7 @@ python --version
 ```
 or
 
-```bash
+```
 python3 --version
 ```
 
@@ -23,6 +23,7 @@ If not installed and on Windows, download from the Microsoft Store.
 ## After Installation
 
 You **MUST** create your own separate praw.ini file, where you will assign and store your reddit credentials such as the client ID, Client secret and your Reddit username/password.
+These credentials can be obtained by applying for a [Reddit API Key](https://www.reddit.com/wiki/api/#wiki_reddit_api_access).
 
 Set the paramters of your SubReddit scraper such as the number of posts to go through, or the particular subreddit (possibly another stock subreddit such as r/Investing or r/StockMarket).
 
