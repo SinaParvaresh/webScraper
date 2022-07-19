@@ -28,6 +28,7 @@ These credentials can be obtained by applying for a [Reddit API Key](https://www
 ##### Set the paramters of your SubReddit scraper such as: 
 
 Number of posts to go through (Default set to 100) 
+
 Particular subreddit (possibly another stock subreddit such as r/Investing or r/StockMarket).
 
 
