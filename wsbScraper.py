@@ -1,14 +1,14 @@
 from ast import operator
 from http.client import CREATED
 from pydoc_data.topics import topics
-from turtle import title
 import praw
 import pandas as pd
 import datetime as dt
-from tabulate import tabulate
 import csv
 import re
 import operator
+import json
+import os
 
 # Get credentials from DEFAULT instance in praw.ini
 reddit = praw.Reddit()
@@ -62,8 +62,9 @@ class SubredditSraper:
         _timestampColumn = wsb_data['created'].apply(get_date)
         wsb_data = wsb_data.assign(timestampColumn = _timestampColumn)
         wsb_data = wsb_data.drop(columns='created')
-
+        
         wsb_csv = wsb_data.to_csv('wsb.csv', index=False)
+
 
         #find stock names in each post
         #we convert our titles from a list to a set, as sets have a much faster lookup time
@@ -73,14 +74,39 @@ class SubredditSraper:
             for stock in stockNames.keys():
                 if re.search(r'\s+\$?' + stock + r'\$?\s+', title):
                     stockNames_dict[stock] += 1
-        
-        #sorting the list of the most popular stocks, and choosing the top 5
-        topStocks = dict(sorted(stockNames_dict.items(), key=operator.itemgetter(1), reverse=True)[:5])
-        print("The top 5 stocks are:")
 
+        #sorting the list of the most popular stocks, and choosing the top 5
+        date_today = str(_timestampColumn[0])
+        topStocks = dict(sorted(sorted(stockNames_dict.items(), key=operator.itemgetter(1), reverse=True)[:5]))
+        
+        #adding the current date and time of the latest post to our dictionary
+        todayStock = {}
+        todayStock["Date"] = [date_today]
+        todayStock["Date"].append(topStocks)
+
+        print("The top 5 stocks are:")
         for key, value in topStocks.items():
             print(key, ':', value)
-    
+        
+
+        
+        emptyFile = True
+
+        with open("dailyStocks.json", "r") as fp:
+            #Check if the file is empty
+            if os.path.getsize("dailyStocks.json") > 2:
+                previousStocks = json.load(fp)
+                previousStocks["Date"].append(todayStock) 
+                emptyFile = False
+            else:
+                emptyFile = True
+        
+
+        with open("dailyStocks.json", "w") as fp:
+            if emptyFile == True:
+                json.dump(todayStock, fp, sort_keys=True, indent=4)
+            elif emptyFile == False:
+                json.dump(previousStocks, fp, sort_keys=True, indent=4)
 
 
 if __name__ == '__main__':
