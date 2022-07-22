@@ -3,7 +3,10 @@
 
 ## A Subreddit stock title scraper
 
-This program will scrape any subreddit set by the user, and return the top 5 most frequently mentioned stocks.
+This program will scrape any subreddit set by the user, and return the top 5 most frequently mentioned stocks. The stocks are then stored in a JSON file, where the user can view when each group of stocks were added.
+
+A CSV which contains the information of each topic in the subreddit such as the title, date/time posted, and score is automatically created for you when running the program.
+
 
 ## Installation
 
@@ -32,5 +35,3 @@ Number of posts to go through (Default set to 100)
 Particular subreddit (possibly another stock subreddit such as r/Investing or r/StockMarket).
 
 
-
-A CSV which contains the information of each topic in the subreddit such as the title, date/time posted, and score is automatically created for you when running the program.
