@@ -10,7 +10,7 @@ A CSV which contains the information of each topic in the subreddit such as the 
 
 ## Installation
 
-Check if Python is installed (version 3 is required)
+Check if Python is installed (version 3.7+ is required)
 
 ```
 python --version
